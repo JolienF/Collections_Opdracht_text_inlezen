@@ -62,9 +62,6 @@ public class WordLinesMap {
     }
 
     public List<Integer> getWordLineNrs(String word) {
-
-        return null;
+        return wordmap.get(word);
     }
-
-
 }
