@@ -27,14 +27,7 @@ public class WordLinesMap {
                 while (index < words.length) {
                     word = words[index].replaceAll("[^A-Za-z0-9-]", "");
 
-                    List<Integer> lineNumbers;
-                    if (wordmap.containsKey(word)) {
-                        lineNumbers = wordmap.get(word);
-
-                    } else {
-                        lineNumbers = new ArrayList<>();
-                    }
-                    lineNumbers.add(lineNumber);
+                    List<Integer> lineNumbers = getWordLine(word, lineNumber);
 
                     wordmap.put(word,lineNumbers);
 
@@ -44,6 +37,18 @@ public class WordLinesMap {
         } catch (FileNotFoundException fileNotFoundException) {
             System.err.println(fileNotFoundException.getMessage());
         }
+    }
+
+    private List<Integer> getWordLine(String word, int lineNumber) {
+        List<Integer> lineNumbers;
+        if (wordmap.containsKey(word)) {
+            lineNumbers = wordmap.get(word);
+
+        } else {
+            lineNumbers = new ArrayList<>();
+        }
+        lineNumbers.add(lineNumber);
+        return lineNumbers;
     }
 
     public int getNrOfUniqueWords() {
