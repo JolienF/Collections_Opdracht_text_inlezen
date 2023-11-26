@@ -15,5 +15,8 @@ public class CollectionsLauncher {
 //        System.out.println(wordSet.getWordsSorted());
 
         wordmap.readFromFile("resources/input.txt");
+        System.out.println(wordmap.getNrOfUniqueWords());
+        System.out.println(wordmap.getWordsSorted());
+
     }
 }

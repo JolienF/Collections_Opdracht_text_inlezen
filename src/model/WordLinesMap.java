@@ -47,13 +47,18 @@ public class WordLinesMap {
     }
 
     public int getNrOfUniqueWords() {
-        return 0;
-
+        return wordmap.size();
     }
 
     public Iterable<String> getWordsSorted() {
+        List<String> sortedWordList = new ArrayList<>();
+        for (String word : wordmap.keySet()) {
+            sortedWordList.add(word);
+        }
 
-        return null;
+        Collections.sort(sortedWordList);
+
+        return sortedWordList;
     }
 
     public List<Integer> getWordLineNrs(String word) {
